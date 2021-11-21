@@ -1,0 +1,49 @@
+# 系统日志配置
+SYS_LOG:
+  # 控制台日志打印等级
+  console_log_level: warning
+  # 日志文件打印等级
+  file_log_level: info
+  # 每个日志文件大小限制 mb
+  maximum_single_log_file_size_mb: 256
+  # 本地保存日志文件最大数量
+  maximun_log_files: 1
+# 配置数据源信息
+DATA_SOURCE:
+  # 本地日志配置
+  LOCAL:
+    # 日志所在文件夹
+    data_dir: resouce
+    # 日志文件名预定义
+    file_name: []
+    # 单个日志文件大小限制 mb
+    file_size: 1024
+    # 单次解析最多读取文件数量
+    file_num: 10
+  # 远程获取日志配置
+  REMOTE:
+  # 已服务的形式被请求时，接收日志内容相关配置
+# 解析方式配置
+PARSE:
+  # 默认解析中过滤资源类型
+  default_excluded_resource:
+    - label: code
+      type:
+        - .js
+        - .css
+  # 默认已支持解析的资源类型
+  default_included_resource:
+    - label: article
+      type:
+        - .html
+        - .htm
+    - label: document & file
+      type:
+        - .pdf
+        - .doc
+        - .docx
+        - .zip
+    - label: media
+      type: .mpg
+# 默认输出报告配置
+REPORT: Null
